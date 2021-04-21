@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>How to Use</title>
+</head>
+<body>
+	<h3>Load script</h3>
+	<pre>
+		$loader-&gt;load('countries')-&gt;init(&lt;ms&gt;,&lt;version&gt;,&lt;url&gt;);
+	</pre>
+	<p>
+		<strong>ms</strong> - values are global, businesses, cars, deals, events, jobs, realestate. Default to global
+	</p>
+	<p>
+		<strong>version</strong> - version of the db, if changed, db will reset and pull the countries data back to db again
+	</p>
+	<p>Then you need to set up your templates for countries, states, cities, inside its corresponding wrappers, below is a sample</p>
+	<pre>
+		&lt;div class="country-wrapper"&gt;
+			&lt;div class="country" data-template="#country-template"&gt;
+				&lt;div class="template"&gt;
+					&lt;select name="country"&gt;
+						&lt;option value="" selected&gt;Select country&lt;/option&gt;
+						{options}
+					&lt;/select&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class="state" data-template="#state-template"&gt;
+				&lt;div class="template"&gt;
+					&lt;select name="state"&gt;
+						&lt;option value="" selected&gt;Select state&lt;/option&gt;
+						{options}
+					&lt;/select&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class="city" data-template="#city-template"&gt;
+				&lt;div class="template"&gt;
+					&lt;select name="city"&gt;
+						&lt;option value="" selected&gt;Select city&lt;/option&gt;
+						{options}
+					&lt;/select&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	</pre>
+	<p><strong>{options}</strong> - this where all options will be put in</p>
+	<p>For country options</p>
+	<pre>
+	&lt;div class="country" data-template="#country-template"&gt;&lt;/div&gt;
+	</pre>
+	<p>For state options</p>
+	<pre>
+	&lt;div class="state" data-template="#state-template"&gt;&lt;/div&gt;
+	</pre>
+	<p>For city options</p>
+	<pre>
+	&lt;div class="city" data-template="#city-template"&gt;&lt;/div&gt;
+	</pre>
+	<br>
+	<p>You can add your pre-selected item by adding data-default, either text or id e.g</p>
+	<pre>
+	&lt;div class="country" data-template="#country-template" data-default="Nigeria"&gt;&lt;/div&gt;
+	</pre>
+	<p>You can also hide others country and just show your default by adding hide-others class to country component e.g.</p>
+	<pre>
+	&lt;div class="country hide-others" data-default="Nigeria" data-template="#country-template"&gt;&lt;/div&gt;
+	</pre>
+</body>
+</html>

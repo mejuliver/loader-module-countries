@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Countries</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://devcnmain.connectnigeria.com/assets/plugins/foundry/css/themify-icons.css">
+	<link rel="stylesheet" href="./src/style.scss">
+</head>
+<body>
+	<div class="container">
+		<div class="row countryapi-wrapper" style="padding:32px;">
+			<div class="col-md-4">
+				<div class="countryapi" data-template="#template-country">
+					<div class="template">
+						<select name="country" id="country" class="form-control country">
+							<option value="" selected>Select country</option>
+							{options}
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="stateapi" data-default="Adamawa">
+					<div class="template">
+						<select name="state" id="state" class="form-control state">
+							<option value="" selected>Select state</option>
+							{options}
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="cityapi" data-default="Yola">
+					<di class="template">
+						<select name="city" id="city" class="form-control city">
+							<option value="" selected>Select city</option>
+							{options}
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<script>
+		var countries_config={ ms : "events", version : 8};
+	</script>
+	<script src="./src/index.js"></script>
+</body>
+</html>
